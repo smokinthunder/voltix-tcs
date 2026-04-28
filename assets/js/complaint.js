@@ -8,7 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     type.addEventListener('change', sync); sync();
     document.getElementById('contactPerson').value = user.name; document.getElementById('consumerNo').value = user.consumerId || user.customerId; document.getElementById('complaintMobile').value = user.mobile || ''; document.getElementById('complaintAddress').value = user.address || '';
     document.getElementById('complaintPreviewList').innerHTML = window.VoltixCommon.getComplaints().filter(c => c.consumerNo === (user.consumerId || user.customerId)).slice(0,3).map(c => `<div class="complaint-item"><div class="complaint-icon"><i class="bi bi-tools"></i></div><div class="complaint-content"><div class="d-flex justify-content-between align-items-start gap-3"><div><h6>${c.type}</h6><p>${c.id} • ${c.category}</p></div><span class="soft-badge ${c.status === 'Resolved' ? 'paid-badge' : c.status === 'In Progress' ? 'progress-badge' : 'pending-badge'}">${c.status}</span></div></div></div>`).join('');
-    document.getElementById('complaintForm')?.addEventListener('submit', e => { e.preventDefault(); const payload = { type:type.value, category:cat.value, contactPerson:document.getElementById('contactPerson').value.trim(), landmark:document.getElementById('landmark').value.trim(), consumerNo:document.getElementById('consumerNo').value.trim(), description:document.getElementById('problemDescription').value.trim(), mobile:document.getElementById('complaintMobile').value.trim(), address:document.getElementById('complaintAddress').value.trim() }; if (payload.consumerNo.length !== 13) return window.VoltixCommon.toast('Validation', 'Consumer No must be 13 digits.'); if (payload.mobile.length !== 10) return window.VoltixCommon.toast('Validation', 'Mobile Number must be 10 digits.'); window.VoltixCommon.addComplaint(payload); window.location.href='complaint-success.html'; });
+    document.getElementById('complaintForm')?.addEventListener('submit', e => {
+      e.preventDefault();
+      const payload = { type:type.value, category:cat.value, contactPerson:document.getElementById('contactPerson').value.trim(), landmark:document.getElementById('landmark').value.trim(), consumerNo:document.getElementById('consumerNo').value.trim(), description:document.getElementById('problemDescription').value.trim(), mobile:document.getElementById('complaintMobile').value.trim(), address:document.getElementById('complaintAddress').value.trim() };
+      if (!payload.type || !payload.category || !payload.contactPerson || !payload.consumerNo || !payload.description || !payload.mobile || !payload.address) return window.VoltixCommon.toast('Validation Error', 'Please fill in all required fields.');
+      if (payload.consumerNo.length !== 13) return window.VoltixCommon.toast('Validation Error', 'Consumer No must be 13 digits.');
+      if (payload.mobile.length !== 10) return window.VoltixCommon.toast('Validation Error', 'Mobile Number must be 10 digits.');
+      window.VoltixCommon.addComplaint(payload);
+      window.location.href='complaint-success.html';
+    });
     document.getElementById('cancelComplaintBtn')?.addEventListener('click', () => document.getElementById('complaintForm').reset());
   }
   if (page === 'complaint-success') {

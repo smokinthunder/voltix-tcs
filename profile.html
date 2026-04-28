@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voltix - Edit Profile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+</head>
+
+<body data-page="profile">
+  <div id="background-root"></div>
+  <div id="navbar-root"></div>
+
+  <main class="dashboard-main">
+    <div class="container-xxl">
+      <!-- Top Row -->
+      <section class="hero-panel">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <span class="section-kicker mb-0">Profile</span>
+        </div>
+        
+        <h1 class="hero-title">Edit <span class="text-accent">Profile</span></h1>
+
+        <div class="row g-4 mt-2">
+          <div class="col-lg-8">
+            <div class="card-panel h-100">
+              <form id="profileForm">
+                <!-- Read-only fields -->
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label custom-label" for="profCustomerId">Customer ID</label>
+                    <input type="text" class="form-control custom-input" id="profCustomerId" readonly>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label custom-label" for="profConsumerId">Consumer ID</label>
+                    <input type="text" class="form-control custom-input" id="profConsumerId" readonly>
+                  </div>
+                </div>
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label custom-label" for="profUserId">User ID</label>
+                    <input type="text" class="form-control custom-input" id="profUserId" readonly>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label custom-label" for="profAccountNo">Account No</label>
+                    <input type="text" class="form-control custom-input" id="profAccountNo" readonly>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label custom-label" for="profBillNumber">Bill Number</label>
+                  <input type="text" class="form-control custom-input" id="profBillNumber" readonly>
+                </div>
+
+                <hr class="my-4">
+
+                <!-- Editable fields -->
+                <div class="mb-3">
+                  <label class="form-label custom-label" for="profName">Customer Name</label>
+                  <input type="text" class="form-control custom-input" id="profName" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label custom-label" for="profEmail">Email</label>
+                  <input type="email" class="form-control custom-input" id="profEmail" required>
+                </div>
+                <div class="row g-3 mb-3">
+                  <div class="col-md-4">
+                    <label class="form-label custom-label" for="profMobileCode">Mobile Code</label>
+                    <input type="text" class="form-control custom-input" id="profMobileCode" required>
+                  </div>
+                  <div class="col-md-8">
+                    <label class="form-label custom-label" for="profMobile">Mobile Number</label>
+                    <input type="text" class="form-control custom-input" id="profMobile" required maxlength="10">
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <label class="form-label custom-label" for="profAddress">Address</label>
+                  <textarea class="form-control custom-input" id="profAddress" rows="3" required></textarea>
+                </div>
+
+                <div class="page-actions">
+                  <button type="submit" class="btn btn-accent">Save Changes</button>
+                  <a href="dashboard.html" class="btn btn-outline-soft">Cancel</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/profile.js"></script>
+</body>
+</html>
