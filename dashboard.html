@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voltix - Customer Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+</head>
+
+<body data-page="dashboard">
+  <div id="background-root"></div>
+  <div id="navbar-root"></div>
+
+  <main class="dashboard-main">
+    <div class="container-xxl">
+      <!-- Top Row -->
+      <section class="hero-panel">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <span class="section-kicker mb-0">Customer Dashboard</span>
+        </div>
+
+        <div class="row g-4">
+          <!-- Billing Status -->
+          <div class="col-lg-4">
+            <div class="card-panel quick-summary-card h-100">
+              <div class="card-panel-header">
+                <div>
+                  <p class="card-label mb-1">Billing Status</p>
+                  <h3 class="card-title mb-0" id="summaryPendingCount">1 Pending Bill</h3>
+                </div>
+                <div class="status-dot warning"></div>
+              </div>
+
+              <div class="summary-stack mt-4">
+                <div class="summary-line">
+                  <span>Account No</span>
+                  <strong id="summaryAccountNo"></strong>
+                </div>
+
+                <div class="summary-line">
+                  <span>Service Type</span>
+                  <strong id="summaryServiceType"></strong>
+                </div>
+
+                <div class="summary-line">
+                  <span>Next Due Date</span>
+                  <strong id="summaryDueDate"></strong>
+                </div>
+              </div>
+
+              <button class="btn btn-accent w-100 mt-4" id="payPendingBillBtn">
+                Pay Pending Bill
+              </button>
+            </div>
+          </div>
+
+          <!-- Usage Overview -->
+          <div class="col-lg-8">
+            <div class="card-panel h-100">
+              <div class="card-panel-header mb-4">
+                <div>
+                  <p class="card-label mb-1">Usage Overview</p>
+                  <h3 class="card-title mb-0">Consumption trend</h3>
+                </div>
+              </div>
+
+              <div id="usageBars"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats-row">
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <div class="card-panel stat-card h-100">
+              <div class="stat-icon orange">
+                <i class="bi bi-currency-rupee"></i>
+              </div>
+              <p class="card-label">Current Due</p>
+              <h3 class="stat-value" id="statCurrentDue"></h3>
+              <p class="stat-subtext">Outstanding pending dues</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="card-panel stat-card h-100">
+              <div class="stat-icon white">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+              <p class="card-label">Units Consumed</p>
+              <h3 class="stat-value" id="statUnits"></h3>
+              <p class="stat-subtext">This billing cycle</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-4">
+            <div class="card-panel stat-card h-100">
+              <div class="stat-icon muted">
+                <i class="bi bi-calendar2-week"></i>
+              </div>
+              <p class="card-label">Billing Period</p>
+              <h3 class="stat-value" id="statPeriod"></h3>
+              <p class="stat-subtext">Monthly bill generated</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer-root"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
+

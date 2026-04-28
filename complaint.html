@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voltix - Register Complaint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+</head>
+<body data-page="complaint">
+  <div id="background-root"></div>
+  <div id="navbar-root"></div>
+
+<main class="dashboard-main"><div class="container-xxl"><section class="hero-panel"><span class="section-kicker">Support</span><h1 class="hero-title">Register a <span class="text-accent">complaint or service request</span></h1><p class="hero-subtext">Choose a complaint type, fill in the required details, and submit your issue to receive a unique complaint ID.</p></section><section class="content-grid"><div class="row g-4"><div class="col-lg-7"><div class="card-panel h-100"><div class="card-panel-header mb-4"><div><p class="card-label mb-1">Complaint Form</p><h3 class="card-title mb-0">Register Complaint / Service</h3></div></div><form id="complaintForm"><div class="row g-4"><div class="col-md-6"><label class="form-label custom-label">Complaint / Service Type</label><select class="form-select custom-select" id="complaintType"></select></div><div class="col-md-6"><label class="form-label custom-label">Category</label><select class="form-select custom-select" id="complaintCategory"></select></div><div class="col-md-6"><label class="form-label custom-label">Contact Person</label><input id="contactPerson" class="form-control custom-input"></div><div class="col-md-6"><label class="form-label custom-label">Landmark</label><input id="landmark" class="form-control custom-input"></div><div class="col-md-6"><label class="form-label custom-label">Consumer No</label><input id="consumerNo" class="form-control custom-input" maxlength="13"></div><div class="col-md-6"><label class="form-label custom-label">Mobile Number</label><input id="complaintMobile" class="form-control custom-input" maxlength="10"></div><div class="col-12"><label class="form-label custom-label">Problem Description</label><textarea id="problemDescription" class="form-control custom-input complaint-textarea"></textarea></div><div class="col-12"><label class="form-label custom-label">Address</label><textarea id="complaintAddress" class="form-control custom-input"></textarea></div></div><div class="page-actions mt-4"><button class="btn btn-accent" type="submit">Submit Complaint</button><button class="btn btn-outline-soft" type="button" id="cancelComplaintBtn">Cancel</button></div></form></div></div><div class="col-lg-5"><div class="card-panel h-100"><div class="card-panel-header mb-4"><div><p class="card-label mb-1">Recent Complaints</p><h3 class="card-title mb-0">Latest support activity</h3></div></div><div class="complaints-list" id="complaintPreviewList"></div><div class="page-actions mt-4"><a class="btn btn-outline-soft w-100" href="complaint-status.html">View Complaint Status</a></div></div></div></div></section></div></main>
+
+  <div id="footer-root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/complaint.js"></script>
+</body>
+</html>
+
+

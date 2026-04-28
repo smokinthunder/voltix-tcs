@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voltix - Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+</head>
+<body data-page="login">
+  <div id="background-root"></div>
+  <div id="navbar-root"></div>
+
+<main class="dashboard-main auth-main"><div class="container-xxl"><section class="card-panel auth-card"><div class="row g-4 align-items-stretch"><div class="col-lg-6"><div class="auth-side h-100"><div><span class="section-kicker">Unified Access</span><h1 class="hero-title">Sign in to the <span class="text-accent">Voltix</span> portal</h1><p class="hero-subtext">Single login page for both customer and admin access. Customers land on the service dashboard, while admins are redirected to the admin control panel.</p></div><div class="helper-list mt-4"><span class="info-pill"><i class="bi bi-lightning-charge"></i>Customer billing, payments, and complaint flows</span><span class="info-pill"><i class="bi bi-shield-lock"></i>Admin dashboard, bills, complaints, and customer profile views</span><span class="info-pill"><i class="bi bi-palette"></i>Shared Voltix theme across all pages</span></div></div></div><div class="col-lg-6"><div class="auth-form-card h-100"><div class="card-panel-header mb-4"><div><p class="card-label mb-1">Login</p><h3 class="card-title mb-0">Portal Sign In</h3></div><span class="soft-badge pending-badge">Multi-role</span></div><div class="alert alert-soft mb-3"><div class="d-flex justify-content-between gap-3 flex-wrap align-items-center"><div><strong>Customer demo</strong><div class="small-meta">User ID: <code>demoUser</code> • Password: <code>Demo@123</code></div></div><button class="btn btn-accent btn-sm-custom" id="fillCustomerBtn" type="button">Use Customer</button></div></div><div class="alert alert-soft mb-4"><div class="d-flex justify-content-between gap-3 flex-wrap align-items-center"><div><strong>Admin demo</strong><div class="small-meta">User ID: <code>admin</code> • Password: <code>Admin@123</code></div></div><button class="btn btn-outline-soft btn-sm-custom" id="fillAdminBtn" type="button">Use Admin</button></div></div><form id="loginForm"><div class="mb-3"><label class="form-label custom-label" for="userId">User ID</label><input type="text" class="form-control custom-input" id="userId" placeholder="Enter your user ID" /></div><div class="mb-3"><label class="form-label custom-label" for="password">Password</label><input type="password" class="form-control custom-input" id="password" placeholder="Enter your password" /></div><div class="d-grid gap-3 mt-4"><button class="btn btn-accent" type="submit"><i class="bi bi-box-arrow-in-right me-2"></i>Login</button><a class="btn btn-outline-soft" href="register.html"><i class="bi bi-person-plus me-2"></i>Create a customer account</a></div></form></div></div></div></section></div></main>
+
+  <div id="footer-root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/login.js"></script>
+</body>
+</html>
+
+

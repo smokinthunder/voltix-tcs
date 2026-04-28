@@ -1,0 +1,9 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const user = window.VoltixCommon.ensureRole('Admin'); if (!user) return;
+  const search = document.getElementById('adminComplaintSearch'); const status = document.getElementById('adminComplaintStatus'); const body = document.getElementById('adminComplaintBody'); const count = document.getElementById('adminComplaintCount');
+  function bindStatus() { document.querySelectorAll('.complaint-status-select').forEach(sel => sel.addEventListener('change', () => { window.VoltixCommon.updateComplaintStatus(sel.dataset.id, sel.value); window.VoltixCommon.toast('Complaint updated', `Status changed to ${sel.value}.`); })); }
+  function render() { const q = search.value.trim().toLowerCase(); const s = status.value; const rows = window.VoltixCommon.getComplaints().filter(c => `${c.id} ${c.customerName} ${c.type} ${c.category} ${c.consumerNo}`.toLowerCase().includes(q)).filter(c => !s || c.status === s); count.textContent = `${rows.length} complaint${rows.length === 1 ? '' : 's'} shown`; body.innerHTML = rows.length ? rows.map((c,i) => `<tr><td>${i+1}</td><td>${c.id}</td><td>${c.customerName}</td><td>${c.type}</td><td>${c.category}</td><td>${c.createdAt}</td><td><select class="form-select custom-select complaint-status-select" data-id="${c.id}"><option value="Open" ${c.status === 'Open' ? 'selected' : ''}>Open</option><option value="In Progress" ${c.status === 'In Progress' ? 'selected' : ''}>In Progress</option><option value="Resolved" ${c.status === 'Resolved' ? 'selected' : ''}>Resolved</option></select></td><td>${c.description}</td></tr>`).join('') : '<tr><td colspan="8"><div class="empty-state">No complaints matched your filters.</div></td></tr>'; bindStatus(); }
+  search.addEventListener('input', render); status.addEventListener('change', render); render();
+});
+
+

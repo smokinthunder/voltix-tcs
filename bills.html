@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voltix - Bills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+</head>
+<body data-page="bills">
+  <div id="background-root"></div>
+  <div id="navbar-root"></div>
+
+<main class="dashboard-main"><div class="container-xxl"><section class="hero-panel"><div class="row g-4 align-items-center"><div class="col-lg-8"><span class="section-kicker">Pay Bill</span><h1 class="hero-title">Select bills and <span class="text-accent">proceed to payment</span></h1><p class="hero-subtext">Choose one or more pending bills to calculate the total amount and continue to the payment page.</p></div><div class="col-lg-4"><div class="card-panel quick-summary-card h-100"><div class="card-panel-header"><div><p class="card-label mb-1">Selected Amount</p><h3 class="card-title mb-0" id="selectedTotal">₹0</h3></div><div class="status-dot warning"></div></div><p class="muted-copy mt-4 mb-3" id="selectedCount">0 bills selected</p><button class="btn btn-accent w-100" id="proceedToPayBtn">Proceed to Pay</button></div></div></div></section><section class="card-panel"><div class="card-panel-header mb-4"><div><p class="card-label mb-1">Bills</p><h3 class="card-title mb-0">View & select bill records</h3></div><div class="page-actions"><button class="btn btn-outline-soft btn-sm-custom" id="selectPendingBtn">Select All Pending</button><button class="btn btn-outline-soft btn-sm-custom" id="clearSelectionBtn">Clear</button></div></div><div class="table-responsive history-table-wrap"><table class="table history-table"><thead><tr><th>Select</th><th>Sl No</th><th>Bill Number</th><th>Month</th><th>Period</th><th>Units</th><th>Amount</th><th>Due Date</th><th>Status</th></tr></thead><tbody id="billListBody"></tbody></table></div></section></div></main>
+
+  <div id="footer-root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/bills.js"></script>
+</body>
+</html>
+
+
